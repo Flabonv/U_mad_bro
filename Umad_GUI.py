@@ -1,54 +1,48 @@
 from appJar import gui
 
-#def sexChoice():
-
-
 def submit(button):
 	if button == "Cancel":
-		app.stop()
+		Umad.stop()
 	else:
-		if app.getOptionBox("Sex") == "Male":
-			return app.yesNoBox("Status","You mad bro?"), app.getOptionBox("Sex")
-		if app.getOptionBox("Sex") == "Female":
-			return app.yesNoBox("Status","You mad brah?"), app.getOptionBox("Sex")
-		if app.getOptionBox("Sex") == "Other":
-			return app.yesNoBox("Status","You mad?"),app.getOptionBox("Sex")
+		if Umad.getOptionBox("Gender") == "Male":
+			return Umad.yesNoBox("Status","U mad bro?"), Umad.getOptionBox("Gender")
+		if Umad.getOptionBox("Gender") == "Female":
+			return Umad.yesNoBox("Status","U mad brah?"), Umad.getOptionBox("Gender")
+		if Umad.getOptionBox("Gender") == "Other":
+			return Umad.yesNoBox("Status","U mad?"),Umad.getOptionBox("Gender")
 		else:
-			app.infoBox("Input needed","Please make a choice from the list provided")
-			app.go()
+			Umad.infoBox("Input needed","Please make a choice from the list provided")
+			Umad.go()
 
 def get(button):
-	print(app.getOptionBox("Sex"))
+	print(Umad.getOptionBox("Gender"))
 			
 def yesNoMad(button):
 	status,S = submit(button)
 	if status == True:
-		app.infoBox("mad","Deal with it!!")
+		Umad.infoBox("mad","Deal with it!!")
 	elif S == "Male":
-		app.infoBox("notMad","Cool story bro...")
+		Umad.infoBox("notMad","Cool story bro...")
 	elif S == "Female":
-		app.infoBox("notMad","Cool story brah...")
+		Umad.infoBox("notMad","Cool story brah...")
 	elif S == "Other":
-		app.infoBox("notMad","Cool story...")
+		Umad.infoBox("notMad","Cool story...")
 
 def checkstop():
-	return app.yesNoBox("Confirm Exit","Are you sure you want to exit the app?")
+	return Umad.yesNoBox("Confirm Exit","Are you sure you want to exit the Umad?")
 	
-app = gui("Welcome box","400x200")
-app.setBg("grey")
-app.addLabel("welcome","Please choose from the folowing list")
+Umad = gui("Welcome box","400x200")
+Umad.setBg("grey")
+Umad.addLabel("welcome","Please choose from the folowing list")
 
-# sex choice box
-app.addLabelOptionBox("Sex",["- Choose -","Male","Female","Other"])
-
-# sex gettting info
-#app.getOptionbox("Sex")
+# Gender choice box
+Umad.addLabelOptionBox("Gender",["- Choose -","Male","Female","Other"])
 
 # Buttons
-app.addButtons(["Submit","Cancel"],yesNoMad)
+Umad.addButtons(["Submit","Cancel"],yesNoMad)
 
 # checkstop
-app.setStopFunction(checkstop)
+Umad.setStopFunction(checkstop)
 
 
-app.go()
+Umad.go()
