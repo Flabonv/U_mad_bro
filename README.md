@@ -1,6 +1,6 @@
 # U_mad_bro
 If you ever feel mad and need a little robot to talk to...
-This app is not stand alone. You need a list of easaly found packages(appJar)
+This app is not stand alone. You need a list of easily found packages(appJar)
 
 MAIN CONTRIBUTOR FRANÇOIS LABONVILLE  (FLABONV)
 
